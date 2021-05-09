@@ -63,22 +63,23 @@ from DaisyX.modules.helper_funcs.misc import paginate_modules
 from DaisyX.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = """
-Hello there, I'm [🌷Twincy🌷](https://telegra.ph/T-w-i-n-c-y-04-20)
+🤗 Hello there, I'm [🌷 T w i n c y 🌷](https://telegra.ph/T-w-i-n-c-y-04-20)
 
-🥰 hey, I am Cute Group Managing Bot and I will help in managing your group
-
-😇 Make sure you read *Info* Section Below 😇
-"""
+🥰 hey, I am _Cute Group Managing Bot_ and I will help in managing your group."""
 
 buttons = [
     [
-        InlineKeyboardButton(text="! Info !", callback_data="aboutmanu_"),
+        InlineKeyboardButton(text="! Info !", callback_data="aboutmanu_back"),
     ],
     [
         InlineKeyboardButton(text="? Help Menu ?", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(text="× Support Group ×", url="t.me/unlimitedworld_tm_group"),
+    ],
+    [
+
+        InlineKeyboardButton(text="÷ Support Channel ÷", callback_data="help_back"),
     ],
     [
         InlineKeyboardButton(
@@ -90,10 +91,11 @@ buttons = [
 
 HELP_STRINGS = f"""
 [🤗 Twincy's Main Commands-:](https://telegra.ph/T-w-i-n-c-y-04-20)
-👉 /start: Starts me! You've probably already used this.
-👉 /help: Click this, I'll let you know about myself!
-👉 /donate: You can support my creater using this command.
-👉 /settings: 
+
+👉 */start*: Starts me! You've probably already used this.
+👉 */help*: Click this, I'll let you know about myself!
+👉 */donate*: You can support my creater using this command.
+👉 */settings*: 
    ° in PM - will send you your settings for all supported modules.
    ° in a Group - will redirect you to pm, with all that chat's settings.
 """.format(
@@ -431,7 +433,7 @@ def DaisyX_about_callback(update, context):
 
     elif query.data == "aboutmanu_permis":
         query.message.edit_text(
-            text=f"<b> ｢ Admin Permissions 」</b>"
+            text=f"<b> 🤗 Admin Permissions 🤗 </b>"
             f"\nTo avoid slowing down, {dispatcher.bot.first_name} caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), {dispatcher.bot.first_name} will only find out ~10 minutes later."
             f"\n\nIF you want to update them immediately, you can use the /admincache command,thta'll force {dispatcher.bot.first_name} to check who the admins are again and their permissions"
             f"\n\nIf you are getting a message saying:"
@@ -445,7 +447,7 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_spamprot":
         query.message.edit_text(
-            text="* ｢ Anti-Spam Settings 」*"
+            text="* 🤗 Anti-Spam Settings 🤗 *"
             "\n- /antispam <on/off/yes/no>: Change antispam security settings in the group, or return your current settings(when no arguments)."
             "\n_This helps protect you and your groups by removing spam flooders as quickly as possible._"
             "\n\n- /setflood <int/'no'/'off'>: enables or disables flood control"
@@ -474,7 +476,7 @@ def DaisyX_about_callback(update, context):
         )
     elif query.data == "aboutmanu_tac":
         query.message.edit_text(
-            text=f"<b> ｢ Terms and Conditions 」</b>\n"
+            text=f"<b> 🤗 Terms and Conditions 🤗 </b>\n"
             f"\n<i>To Use This Bot, You Need To Read Terms and Conditions Carefully.</i>\n"
             f"\n✌ We always respect your privacy \n  We never log into bot's api and spying on you \n  We use a encripted database \n  Bot will automatically stops if someone logged in with api."
             f"\n✌ Always try to keep credits, so \n  This hardwork is done by Infinity_Bots team spending many sleepless nights.. So, Respect it."
@@ -804,7 +806,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "😇 I am now online! 😇")
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "🥰 I am now online! 😘")
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
