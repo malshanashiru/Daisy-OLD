@@ -63,34 +63,29 @@ from DaisyX.modules.helper_funcs.misc import paginate_modules
 from DaisyX.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = """
-🤗 Hello there, I'm [🌷 T w i n c y 🌷](https://telegra.ph/T-w-i-n-c-y-04-20)
+😍 Hello there, I'm [🌷T w i n c y🌷](https://telegra.ph/T-w-i-n-c-y-04-20)
 
-🥰 hey, I am _Cute Group Managing Bot_ and I will help in managing your group."""
+👋 hey, I am _Cute Group Managing Bot_ and I will help in managing your group."""
 
 buttons = [
     [
-        InlineKeyboardButton(text="! Info !", callback_data="aboutmanu_back"),
+        InlineKeyboardButton(text="🌷Info🌷", callback_data="aboutmanu_back"),
+        InlineKeyboardButton(text="🌷Help Menu🌷", callback_data="help_back"),
     ],
     [
-        InlineKeyboardButton(text="? Help Menu ?", callback_data="help_back"),
-    ],
-    [
-        InlineKeyboardButton(text="× Support Group ×", url="t.me/unlimitedworld_tm_group"),
-    ],
-    [
-
-        InlineKeyboardButton(text="÷ Support Channel ÷", callback_data="help_back"),
+        InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
+        InlineKeyboardButton(text="🌷Support Channel🌷", url="t.me/unlimited_world_TM_channel"),
     ],
     [
         InlineKeyboardButton(
-            text="+ Add Twincy to your group +", url="t.me/uwgrouphelper_bot?startgroup=true"
+            text="🌷Add Twincy to your group🌷", url="t.me/uwgrouphelper_bot?startgroup=true"
         ),
     ],
 ]
 
 
 HELP_STRINGS = f"""
-[🤗 Twincy's Main Commands-:](https://telegra.ph/T-w-i-n-c-y-04-20)
+[🌷 Twincy's Main Commands 🌷](https://telegra.ph/T-w-i-n-c-y-04-20)
 
 👉 */start*: Starts me! You've probably already used this.
 👉 */help*: Click this, I'll let you know about myself!
@@ -103,7 +98,7 @@ HELP_STRINGS = f"""
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
 )
 
-DONATE_STRING = """Heya, glad to hear you want to donate!It took lots of work for [my creator](t.me/ASHIRUMALSHAN) to get me to where I am now, and every donation helps \motivate him to make me even better. There are one ways of paying him; [PayPal](paypal.me/ashirumalshan),."""
+DONATE_STRING = """Hey, glad to hear you want to donate!It took lots of work for [my creator](t.me/ASHIRUMALSHAN) to get me to where I am now, and every donation helps \motivate him to make me even better. There are one ways of paying him; [PayPal](paypal.me/ashirumalshan),."""
 
 
 IMPORTED = {}
@@ -200,7 +195,7 @@ def start(update: Update, context: CallbackContext):
                     update.effective_chat.id,
                     HELPABLE[mod].__help__,
                     InlineKeyboardMarkup(
-                        [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                        [[InlineKeyboardButton(text="🌷Back🌷", callback_data="help_back")]]
                     ),
                 )
 
@@ -227,7 +222,13 @@ def start(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
-            ),
+buttons = [
+    [
+        InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
+        InlineKeyboardButton(text="🌷Support Channel🌷", url="t.me/unlimited_world_TM_channel"),
+    ],
+    ],
+  ),
             parse_mode=ParseMode.HTML,
         )
 
@@ -301,7 +302,7 @@ def help_button(update, context):
         if mod_match:
             module = mod_match.group(1)
             text = (
-                "*🤗 Help  for  {}  module 🤗*\n".format(
+                "*🌷 Help  for  {}  module 🌷*\n".format(
                     HELPABLE[module].__mod_name__
                 )
                 + HELPABLE[module].__help__
@@ -310,7 +311,7 @@ def help_button(update, context):
                 text=text,
                 parse_mode=ParseMode.MARKDOWN,
                 reply_markup=InlineKeyboardMarkup(
-                    [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                    [[InlineKeyboardButton(text="🌷Back🌷", callback_data="help_back")]]
                 ),
             )
 
@@ -361,11 +362,11 @@ def help_button(update, context):
 @run_async
 def DaisyX_about_callback(update, context):
     query = update.callback_query
-    if query.data == "aboutmanu_":
+    if query.data == "aboutmanu_back":
         query.message.edit_text(
             text=f"*😍 Hi again!  The name's {dispatcher.bot.first_name} 😍 \n\nAs  You I'm a next generational group management bot develop by [UNLIMITED worldᵀᴹ](https://t.me/unlimitedworld_tm_group) To Keep Yourself Updated About {dispatcher.bot.first_name} 👊"
-            f"\n\n I have the normal GROUP MANAGING functions like flood control, a warning system etc but I mainly have the advanced and handy Antispam system and the SIBYL banning system which safegaurds and helps your group from spammers."
-            f"\n\nI Can Manage Your Groups Smoothly, With Some Special Features [❀](https://telegra.ph/T-w-i-n-c-y-04-20)"
+            f"\n\n I have the ADVANCED GROUP MANAGING functions like flood control, a warning system etc but I mainly have the advanced and handy Antispam system and the SIBYL banning system which safegaurds and helps your group from spammers."
+            f"\n\nI Can Manage Your Groups Smoothly, With Some Special Features [🌷](https://telegra.ph/T-w-i-n-c-y-04-20)"
             f"\n\n👇 You Can Know More About Me By Clicking The Below Buttons 👇",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -373,18 +374,23 @@ def DaisyX_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="How To Use Me", callback_data="aboutmanu_howto"
+                            text="🌷How To Use Me🌷", callback_data="aboutmanu_howto"
                         ),
                         InlineKeyboardButton(
-                            text="T & C", callback_data="aboutmanu_tac"
+                            text="🌷T & C🌷", callback_data="aboutmanu_tac"
                         ),
                     ],
                     [
                         InlineKeyboardButton(
-                            text="? Help & Commands ?", callback_data="help_back"
+                            text="🌷Help & Commands🌷", callback_data="help_back"
                         )
+                    ]
+                    [
+                        InlineKeyboardButton(
+                            text="🌷Support Chat🌷", url="t.me/unlimitedworld_TM_group"
+                        )    
                     ],
-                    [InlineKeyboardButton(text="Back", callback_data="aboutmanu_back")],
+                    [InlineKeyboardButton(text="🌷Back🌷", callback_data="aboutmanu_back")],
                 ]
             ),
         )
@@ -398,9 +404,9 @@ def DaisyX_about_callback(update, context):
 
     elif query.data == "aboutmanu_howto":
         query.message.edit_text(
-            text=f"*💁‍ BASIC HELP 💁‍*"
-            f"\nIf You Can Also Add {dispatcher.bot.first_name} To Your Chats By Clicking [Here](http://t.me/{dispatcher.bot.username}?startgroup=true) And Selecting Chat. \n"
-            f"\n\nYou Can get support {dispatcher.bot.first_name} by joining [UNLIMITED worldᵀᴹ](https://t.me/unlimitedworld_tm_group).\n"
+            text=f"*🌷 BASIC HELP 🌷**"
+            f"\n\n👉 If You Can Also Add {dispatcher.bot.first_name} To Your Chats By Clicking [Here](http://t.me/{dispatcher.bot.username}?startgroup=true) And Selecting Chat. \n"
+            f"\n👉 You Can get support {dispatcher.bot.first_name} by joining [UNLIMITED worldᵀᴹ](https://t.me/unlimitedworld_tm_group).\n"
             f"",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
@@ -408,46 +414,46 @@ def DaisyX_about_callback(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Admins Settings", callback_data="aboutmanu_permis"
+                            text="🌷Admins Settings🌷", callback_data="aboutmanu_permis"
                         ),
                         InlineKeyboardButton(
-                            text="Anti Spam", callback_data="aboutmanu_spamprot"
+                            text="🌷Anti Spam🌷", callback_data="aboutmanu_spamprot"
                         ),
                     ],
-                    [InlineKeyboardButton(text="Back", callback_data="aboutmanu_")],
+                    [InlineKeyboardButton(text="🌷Back🌷", callback_data="aboutmanu_")],
                 ]
             ),
         )
     elif query.data == "aboutmanu_credit":
         query.message.edit_text(
             text=f"*{dispatcher.bot.first_name} Is the Powerfull Telegram Group Controller Bot.*"
-            f"\n\nBased on [🌷 Twincy 🌷](https://github.com/malshanashiru/daisy) + [@ASHIRU](https://t.me/ashirumalshan)."
+            f"\n\nBased on [🌷T w i n c y🌷](https://github.com/malshanashiru/daisy) + [@ASHIRU](https://t.me/ashirumalshan)."
             f"\n\n{dispatcher.bot.first_name}'s source code was written by ASHIRU and UNLIMITED worldᵀᴹ"
             f"\n\nIf Any Question About {dispatcher.bot.first_name}, \nLet Us Know At @{SUPPORT_CHAT}.",
             parse_mode=ParseMode.MARKDOWN,
             disable_web_page_preview=True,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_tac")]]
+                [[InlineKeyboardButton(text="🌷Back🌷", callback_data="aboutmanu_tac")]]
             ),
         )
 
     elif query.data == "aboutmanu_permis":
         query.message.edit_text(
-            text=f"<b> 🤗 Admin Permissions 🤗 </b>"
+            text=f"<b>🌷 Admin Permissions 🌷</b>"
             f"\nTo avoid slowing down, {dispatcher.bot.first_name} caches admin rights for each user. This cache lasts about 10 minutes; this may change in the future. This means that if you promote a user manually (without using the /promote command), {dispatcher.bot.first_name} will only find out ~10 minutes later."
             f"\n\nIF you want to update them immediately, you can use the /admincache command,thta'll force {dispatcher.bot.first_name} to check who the admins are again and their permissions"
             f"\n\nIf you are getting a message saying:"
-            f"\n<Code>You must be this chat administrator to perform this action!</code>"
+            f"\n<b>You must be this chat administrator to perform this action!</b>"
             f"\nThis has nothing to do with {dispatcher.bot.first_name}'s rights; this is all about YOUR permissions as an admin. {dispatcher.bot.first_name} respects admin permissions; if you do not have the Ban Users permission as a telegram admin, you won't be able to ban users with {dispatcher.bot.first_name}. Similarly, to change {dispatcher.bot.first_name} settings, you need to have the Change group info permission."
             f"\n\nThe message very clearly says that you need these rights - <i>not {dispatcher.bot.first_name}.</i>",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]
+                [[InlineKeyboardButton(text="🌷Back🌷", callback_data="aboutmanu_howto")]]
             ),
         )
     elif query.data == "aboutmanu_spamprot":
         query.message.edit_text(
-            text="* 🤗 Anti-Spam Settings 🤗 *"
+            text="* 🌷 Anti-Spam Settings 🌷 *"
             "\n- /antispam <on/off/yes/no>: Change antispam security settings in the group, or return your current settings(when no arguments)."
             "\n_This helps protect you and your groups by removing spam flooders as quickly as possible._"
             "\n\n- /setflood <int/'no'/'off'>: enables or disables flood control"
@@ -471,30 +477,30 @@ def DaisyX_about_callback(update, context):
             "\n_ A button gets added to the welcome message for them to unmute themselves. This proves they aren't a bot! soft - restricts users ability to post media for 24 hours. strong - mutes on join until they prove they're not bots._",
             parse_mode=ParseMode.MARKDOWN,
             reply_markup=InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="aboutmanu_howto")]]
+                [[InlineKeyboardButton(text="🌷Back🌷", callback_data="aboutmanu_howto")]]
             ),
         )
     elif query.data == "aboutmanu_tac":
         query.message.edit_text(
-            text=f"<b> 🤗 Terms and Conditions 🤗 </b>\n"
-            f"\n<i>To Use This Bot, You Need To Read Terms and Conditions Carefully.</i>\n"
+            text=f"<b> 🌷 Terms and Conditions 🌷 </b>\n"
+            f"\n\n<i>To Use This Bot, You Need To Read Terms and Conditions Carefully.</i>\n"
             f"\n✌ We always respect your privacy \n  We never log into bot's api and spying on you \n  We use a encripted database \n  Bot will automatically stops if someone logged in with api."
-            f"\n✌ Always try to keep credits, so \n  This hardwork is done by Infinity_Bots team spending many sleepless nights.. So, Respect it."
-            f"\n✌ Some modules in this bot is owned by different authors, So, \n  All credits goes to them \n  Also for <b>Paul Larson for Marie</b>."
+            f"\n✌ Always try to keep credits, so \n  This hardwork is done by *UNLIMITED worldᵀᴹ* team spending many sleepless nights.. So, Respect it."
+            f"\n✌ Some modules in this bot is owned by different authors, So, \n  All credits goes to them \n  Also for <b>@ASHIRUMALSHAN for @unlimitedworld_TM_channel</b>."
             f"\n✌ If you need to ask anything about \n  this bot, Go @{SUPPORT_CHAT}."
-            f"\n✌ If you asking nonsense in Support \n  Chat, you will get warned/banned."
+            f"\n✌ If you asking nonsense in Support \n  Chat, you will get warned or banned."
             f"\n✌ All api's we used owned by originnal authors \n  Some api's we use Free version \n  Please don't overuse AI Chat."
-            f"\n✌ We don't Provide any support to forks,\n  So these terms and conditions not applied to forks \n  If you are using a cute tg group helper bot of 🌷Twincy🌷 Bot."
-            f"\n\nFor any kind of help, related to this bot, Join @{SUPPORT_CHAT}."
+            f"\n✌ We don't Provide any support to forks,\n  So these terms and conditions not applied to forks \n  If you are using a cute tg group helper bot of 🌷T w i n c y🌷 Bot."
+            f"\n\n✌ For any kind of help, related to this bot, Join @{SUPPORT_CHAT}."
             f"\n\n<i>Terms & Conditions will be changed anytime</i>\n",
             parse_mode=ParseMode.HTML,
             reply_markup=InlineKeyboardMarkup(
                 [
                     [
                         InlineKeyboardButton(
-                            text="Credits", callback_data="aboutmanu_credit"
+                            text="🌷Credits🌷", callback_data="aboutmanu_credit"
                         ),
-                        InlineKeyboardButton(text="Back", callback_data="aboutmanu_"),
+                        InlineKeyboardButton(text="🌷Back🌷", callback_data="aboutmanu_"),
                     ]
                 ]
             ),
@@ -517,7 +523,7 @@ def get_help(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Help",
+                                text="🌷Help🌷",
                                 url="t.me/{}?start=ghelp_{}".format(
                                     context.bot.username, module
                                 ),
@@ -533,13 +539,13 @@ def get_help(update, context):
                 [
                     [
                         InlineKeyboardButton(
-                            text="Help",
+                            text="🌷Help🌷",
                             url="t.me/{}?start=help".format(context.bot.username),
                         )
                     ],
                     [
                         InlineKeyboardButton(
-                            text="Support Chat",
+                            text="🌷Support Chat🌷",
                             url="https://t.me/{}".format(SUPPORT_CHAT),
                         )
                     ],
@@ -551,7 +557,7 @@ def get_help(update, context):
     elif len(args) >= 2 and any(args[1].lower() == x for x in HELPABLE):
         module = args[1].lower()
         text = (
-            "Here is the available help for the *{}* module:\n".format(
+            "🌷 Here is the available help for the *{}* module 🌷:\n".format(
                 HELPABLE[module].__mod_name__
             )
             + HELPABLE[module].__help__
@@ -560,7 +566,15 @@ def get_help(update, context):
             chat.id,
             text,
             InlineKeyboardMarkup(
-                [[InlineKeyboardButton(text="Back", callback_data="help_back")]]
+                [
+     [
+        InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
+        InlineKeyboardButton(text="🌷Support Channel🌷", url="t.me/unlimited_world_TM_channel"),
+     ], 
+     [
+        InlineKeyboardButton(text="🌷Back🌷", callback_data="help_back")
+     ], 
+     ]
             ),
         )
 
@@ -632,7 +646,7 @@ def settings_button(update, context):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Back",
+                                text="🌷Back🌷",
                                 callback_data="stngs_back({})".format(chat_id),
                             )
                         ]
@@ -713,7 +727,7 @@ def get_settings(update: Update, context: CallbackContext):
                     [
                         [
                             InlineKeyboardButton(
-                                text="Settings",
+                                text="🌷Settings🌷",
                                 url="t.me/{}?start=stngs_{}".format(
                                     context.bot.username, chat.id
                                 ),
@@ -723,7 +737,7 @@ def get_settings(update: Update, context: CallbackContext):
                 ),
             )
         else:
-            text = "Click here to check your settings."
+            text = "*🌷 Click here to check your settings 🌷*"
 
     else:
         send_settings(chat.id, user.id, True)
@@ -806,7 +820,12 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "🥰 I am now online! 😘")
+            dispatcher.bot.sendMessage(f"@{CHAT_LIST}", "*🥰 I am now online! ✅*
+   buttons = [
+       [
+        InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
+       ],
+       ]
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
@@ -824,7 +843,7 @@ def main():
     settings_callback_handler = CallbackQueryHandler(settings_button, pattern=r"stngs_")
 
     about_callback_handler = CallbackQueryHandler(
-        DaisyX_about_callback, pattern=r"aboutmanu_"
+        DaisyX_about_callback, pattern=r"aboutmanu_back"
     )
 
     donate_handler = CommandHandler("donate", donate)
