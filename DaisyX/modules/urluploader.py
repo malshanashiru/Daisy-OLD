@@ -90,7 +90,7 @@ ETA: {}""".format(
 
 
 __help__ = """
- 👉 */up* - _reply to a direct download link to upload it to telegram as files._
+ 👉 */up* - `reply to a direct download link to upload it to telegram as files.`
  
  **@unlimitedworld_TM_channel**"""
 
