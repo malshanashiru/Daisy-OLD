@@ -29,7 +29,7 @@ except:
     from youtubesearchpython import SearchVideos
 
 
-@register(pattern="^/music (.*)")
+@register(pattern="^/asong (.*)")
 async def download_video(v_url):
 
     lazy = v_url
@@ -114,6 +114,7 @@ async def download_video(v_url):
             f"`Preparing to upload song:`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*"
+        \n *🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -136,6 +137,7 @@ async def download_video(v_url):
             f"`Preparing to upload song :`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*"
+        \n *🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -227,6 +229,7 @@ async def download_video(v_url):
             f"`Preparing to upload song `\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*"
+        \n *🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -250,6 +253,7 @@ async def download_video(v_url):
             f"`Preparing to upload video song :`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*"
+        \n *🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -265,9 +269,9 @@ async def download_video(v_url):
 
 
 __help__ = """
- ➩ /music <songname artist(optional)>: uploads the song in it's best quality available
+ 👉 /asong <songname artist> *:* uploads the audio song in it's best quality available.
 
- ➩ /vsong <songname artist(optional)>: uploads the video song in it's best quality available
+ 👉 /vsong <songname artist> *:* uploads the video song in it's best quality available.
 """
 
-__mod_name__ = "Songs 🎸"
+__mod_name__ = "•Songs•"
