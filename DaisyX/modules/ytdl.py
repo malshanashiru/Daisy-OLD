@@ -101,6 +101,7 @@ async def download_video(v_url):
             f"`Preparing to upload song:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"
+        \n*🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -120,6 +121,7 @@ async def download_video(v_url):
             f"`Preparing to upload video:`\
         \n**{ytdl_data['title']}**\
         \nby *{ytdl_data['uploader']}*"
+        \n*🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
