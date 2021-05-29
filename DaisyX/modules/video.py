@@ -64,7 +64,7 @@ async def download_video(v_url):
             "logtostderr": False,
             "quiet": True,
         }
-        song = False
+        song = True
         video = True
     try:
         await rkp.edit("`Fetching data, please wait..`")
@@ -105,6 +105,7 @@ async def download_video(v_url):
             f"`Preparing to upload song `\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*"
+        \n *🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
@@ -128,6 +129,7 @@ async def download_video(v_url):
             f"`Preparing to upload video song :`\
         \n**{rip_data['title']}**\
         \nby *{rip_data['uploader']}*"
+        \n *🎧Upload By, @unlimitedworld_TM_channel*
         )
         await v_url.client.send_file(
             v_url.chat_id,
