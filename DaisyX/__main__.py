@@ -63,7 +63,7 @@ from DaisyX.modules.helper_funcs.misc import paginate_modules
 from DaisyX.modules.helper_funcs.readable_time import get_readable_time
 
 PM_START_TEXT = """
-😍 Hello there, I'm [🌷T w i n c y🌷](https://telegra.ph/T-w-i-n-c-y-04-20)
+😍 Hello there, I'm [🌷 T w i n c y 🌷](https://telegra.ph/T-w-i-n-c-y-04-20)
 
 👋 hey, I am _Cute Group Managing Bot_ and I will help in managing your group."""
 
@@ -222,15 +222,16 @@ def start(update: Update, context: CallbackContext):
         update.effective_message.reply_text(
             "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
                 uptime
+                parse_mode=ParseMode.HTML,),
 buttons = [
     [
         InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
+    ],
+    [
         InlineKeyboardButton(text="🌷Support Channel🌷", url="t.me/unlimited_world_TM_channel"),
     ],
-    ],
+  ]  
   ),
-            parse_mode=ParseMode.HTML,
-        )
 
 
 def error_handler(update, context):
