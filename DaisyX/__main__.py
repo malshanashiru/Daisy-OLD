@@ -220,17 +220,9 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "*I'm awake already!*\n*Haven't slept since:* `{}`".format(
+            "*I'm awake already!*\n*Haven't slept since:* `{}`🌷 **@uwgrouphelper_bot** 🌷".format(
                 uptime
-                parse_mode=ParseMode.MARKDOWN,),
-                reply_markup=InlineKeyboardMarkup(
-    [
-        InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
-    ],
-    [
-        InlineKeyboardButton(text="🌷Support Channel🌷", url="t.me/unlimited_world_TM_channel"),
-    ],
-  ]  
+                parse_mode=ParseMode.MARKDOWN,  
   ),
 )
 
