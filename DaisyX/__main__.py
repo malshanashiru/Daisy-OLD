@@ -91,8 +91,8 @@ HELP_STRINGS = f"""
 👉 */help*: Click this, I'll let you know about myself!
 👉 */donate*: You can support my creater using this command.
 👉 */settings*: 
-   ° in PM - will send you your settings for all supported modules.
-   ° in a Group - will redirect you to pm, with all that chat's settings.
+   🌸 in PM - will send you your settings for all supported modules.
+   🌸 in a Group - will redirect you to pm, with all that chat's settings.
 """.format(
     dispatcher.bot.first_name,
     "" if not ALLOW_EXCL else "\nAll commands can either be used with / or !.\n",
@@ -813,12 +813,7 @@ def main():
 
     if SUPPORT_CHAT is not None and isinstance(SUPPORT_CHAT, str):
         try:
-            dispatcher.bot.sendMessage(f"@{CHAT_LIST}", "*🥰 I am now online! ✅*
-   buttons = [
-       [
-        InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
-       ],
-       ]
+            dispatcher.bot.sendMessage(f"@{SUPPORT_CHAT}", "*🥰 I am now online!🌷*"
         except Unauthorized:
             LOGGER.warning(
                 "Bot isnt able to send message to support_chat, go and check!"
