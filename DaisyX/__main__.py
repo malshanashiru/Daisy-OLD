@@ -220,10 +220,10 @@ def start(update: Update, context: CallbackContext):
             )
     else:
         update.effective_message.reply_text(
-            "I'm awake already!\n<b>Haven't slept since:</b> <code>{}</code>".format(
+            "*I'm awake already!*\n*Haven't slept since:* `{}`".format(
                 uptime
-                parse_mode=ParseMode.HTML,),
-buttons = [
+                parse_mode=ParseMode.MARKDOWN,),
+                reply_markup=InlineKeyboardMarkup(
     [
         InlineKeyboardButton(text="🌷Support Group🌷", url="t.me/unlimitedworld_tm_group"),
     ],
@@ -232,7 +232,7 @@ buttons = [
     ],
   ]  
   ),
-
+)
 
 def error_handler(update, context):
     """Log the error and send a telegram message to notify the developer."""
